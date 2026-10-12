@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam 2026-2027 | Trip Hub</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        tropical: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f0fdfa; }
+        ::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0f766e; }
+        
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.expanded {
+            max-height: 500px; /* Arbitrary large number to allow content to show */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-tropical-100 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2 text-tropical-700 font-bold text-xl tracking-tight">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    VN '26-'27
+                </div>
+                <div class="hidden sm:flex space-x-8">
+                    <a href="#overview" class="text-slate-600 hover:text-tropical-600 transition-colors font-medium text-sm">Overview</a>
+                    <a href="#documents" class="text-slate-600 hover:text-tropical-600 transition-colors font-medium text-sm">Documents</a>
+                    <a href="#itinerary" class="text-slate-600 hover:text-tropical-600 transition-colors font-medium text-sm">Itinerary</a>
+                    <a href="#highlights" class="text-slate-600 hover:text-tropical-600 transition-colors font-medium text-sm">Highlights</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-32 flex items-center justify-center min-h-[60vh] bg-tropical-900 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-40 mix-blend-overlay bg-cover bg-center" style="background-image: url('https://placehold.co/1200x800/0f766e/ffffff?text=Tropical+Vietnam');"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <span class="inline-block py-1 px-3 rounded-full bg-tropical-500/30 text-tropical-50 border border-tropical-400/50 text-sm font-semibold tracking-wider mb-4 uppercase">The Big Trip</span>
+            <h1 class="text-5xl md:text-7xl font-serif text-white font-bold mb-6 drop-shadow-lg">Vietnam Holiday</h1>
+            <p class="text-xl md:text-2xl text-tropical-50 font-light mb-8 drop-shadow-md">North to South: Hanoi • Sapa • Ninh Binh • Hoi An • Phu Quoc • HCMC</p>
+            <a href="#itinerary" class="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-tropical-900 bg-white border border-transparent rounded-full shadow-lg hover:bg-tropical-50 transition-all hover:scale-105 active:scale-95">
+                View the Plan
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+        
+        <!-- Trip Overview -->
+        <section id="overview" class="scroll-mt-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-start gap-4">
+                    <div class="bg-tropical-100 p-3 rounded-xl text-tropical-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Trip Dates</h3>
+                        <p class="text-slate-600 mt-1">December 2026 – January 2027<br><span class="text-sm text-slate-500">14 Days Total</span></p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-start gap-4">
+                    <div class="bg-tropical-100 p-3 rounded-xl text-tropical-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800">Travel Crew</h3>
+                        <ul class="text-slate-600 mt-1 text-sm list-disc pl-4 marker:text-tropical-400 space-y-1">
+                            <li>Mr. Deepak Kushwah</li>
+                            <li>Mrs. Priyanka Diwakar</li>
+                            <li>Ms. Swati Kushwah</li>
+                            <li>Mr. Pawan Parasnath Singh</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Documents -->
+        <section id="documents" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <h2 class="text-3xl font-serif font-bold text-slate-800">Important Documents</h2>
+                <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Flight Card -->
+                <a href="#" class="group block bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-tropical-300 transition-all">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-blue-50 text-blue-600 p-2 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <svg class="w-5 h-5 text-slate-300 group-hover:text-tropical-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-1">Flight Tickets</h3>
+                    <p class="text-sm text-slate-500">Shared Google Drive folder with all inbound and internal flights.</p>
+                </a>
+
+                <!-- Visa Card -->
+                <a href="#" class="group block bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-tropical-300 transition-all">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-purple-50 text-purple-600 p-2 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <svg class="w-5 h-5 text-slate-300 group-hover:text-tropical-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-1">Approved E-Visas</h3>
+                    <p class="text-sm text-slate-500">Download your PDF visa copy here. Keep it on your phone.</p>
+                </a>
+
+                <!-- Hotel Card -->
+                <a href="#" class="group block bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-tropical-300 transition-all">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="bg-amber-50 text-amber-600 p-2 rounded-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <svg class="w-5 h-5 text-slate-300 group-hover:text-tropical-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-slate-800 mb-1">Hotel Confirmations</h3>
+                    <p class="text-sm text-slate-500">Includes Novotel Phu Quoc (Dec 22-27) and other stays.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Itinerary Timeline -->
+        <section id="itinerary" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <h2 class="text-3xl font-serif font-bold text-slate-800">The Master Plan</h2>
+                <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+
+            <div class="relative border-l-2 border-tropical-100 ml-4 md:ml-6 space-y-6">
+                
+                <!-- Day 1 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-tropical-500 border-4 border-white shadow-sm"></div>
+                    <button class="w-full text-left bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-tropical-200 transition-all" onclick="toggleAccordion('day1')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-tropical-600 mb-1 block">Day 1 • Dec 18, 2026</span>
+                                <h3 class="text-xl font-bold text-slate-800">Departure & Hanoi Arrival</h3>
+                            </div>
+                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div id="day1" class="accordion-content mt-4 text-slate-600 text-sm">
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Flights</p>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li><strong>IndiGo 6E 836 (A321):</strong> BLR T1 (05:35) &rarr; DEL T1 (08:25)</li>
+                                <li><strong>IndiGo 6E 1633 (A321):</strong> DEL T3 (12:20) &rarr; HAN T2 (18:05)</li>
+                            </ul>
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Accommodation</p>
+                            <p class="mb-4">Check-in: <strong>Novotel Suites Hanoi</strong> (Superior Studio King Bed)</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <a href="#documents" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold hover:bg-blue-100 transition-colors inline-block">View Flight Tickets</a>
+                                <a href="#documents" class="px-4 py-2 bg-amber-50 text-amber-700 rounded-lg text-xs font-bold hover:bg-amber-100 transition-colors inline-block">View Hotel Confirmation</a>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-amber-400 border-4 border-white shadow-sm"></div>
+                    <button class="w-full text-left bg-white rounded-2xl p-5 shadow-md border-2 border-amber-100 hover:border-amber-300 transition-all" onclick="toggleAccordion('day5')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 mb-1 block">Day 5 • Dec 22, 2026</span>
+                                <h3 class="text-xl font-bold text-slate-800">Off to Phu Quoc Island</h3>
+                            </div>
+                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div id="day5" class="accordion-content mt-4 text-slate-600 text-sm">
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Flight</p>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li><strong>VietJet Air VJ-445:</strong> HAN T1 (16:00) &rarr; PQC (18:05)</li>
+                            </ul>
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Accommodation</p>
+                            <p class="mb-4">Check-in: <strong>Novotel Phu Quoc Resort</strong> (Deluxe Bungalow)</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <a href="#documents" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold hover:bg-blue-100 transition-colors inline-block">View Flight Ticket</a>
+                                <a href="#documents" class="px-4 py-2 bg-amber-50 text-amber-700 rounded-lg text-xs font-bold hover:bg-amber-100 transition-colors inline-block">View Hotel Confirmation</a>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Day 10 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-tropical-500 border-4 border-white shadow-sm"></div>
+                    <button class="w-full text-left bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-tropical-200 transition-all" onclick="toggleAccordion('day10')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-tropical-600 mb-1 block">Day 10 • Dec 27, 2026</span>
+                                <h3 class="text-xl font-bold text-slate-800">Hello Thailand!</h3>
+                            </div>
+                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div id="day10" class="accordion-content mt-4 text-slate-600 text-sm">
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Flight</p>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li><strong>Thai VietJet VZ-983:</strong> PQC (16:50) &rarr; BKK (18:10)</li>
+                            </ul>
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Accommodation</p>
+                            <p class="mb-4">Check-in: <strong>ibis Styles Bangkok Sukhumvit Phra Khanong</strong> (Standard Room with 1 Double bed)</p>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <a href="#documents" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold hover:bg-blue-100 transition-colors inline-block">View Flight Ticket</a>
+                                <a href="#documents" class="px-4 py-2 bg-amber-50 text-amber-700 rounded-lg text-xs font-bold hover:bg-amber-100 transition-colors inline-block">View Hotel Confirmation</a>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Day 14 -->
+                <div class="relative pl-8 md:pl-10">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-tropical-500 border-4 border-white shadow-sm"></div>
+                    <button class="w-full text-left bg-white rounded-2xl p-5 shadow-sm border border-slate-100 hover:border-tropical-200 transition-all" onclick="toggleAccordion('day14')">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-tropical-600 mb-1 block">Day 14 • Dec 31, 2026</span>
+                                <h3 class="text-xl font-bold text-slate-800">Heading Home</h3>
+                            </div>
+                            <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
+                        <div id="day14" class="accordion-content mt-4 text-slate-600 text-sm">
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Accommodation</p>
+                            <p class="mb-4">Check-out from: <strong>ibis Styles Bangkok Sukhumvit Phra Khanong</strong></p>
+                            <p class="font-semibold text-tropical-700 mb-2 border-b border-tropical-100 pb-1">Flight</p>
+                            <ul class="list-disc pl-5 mb-4 space-y-1">
+                                <li><strong>IndiGo 6E-1214:</strong> BKK (10:50) &rarr; BLR T2 (13:15)</li>
+                            </ul>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <a href="#documents" class="px-4 py-2 bg-blue-50 text-blue-700 rounded-lg text-xs font-bold hover:bg-blue-100 transition-colors inline-block">View Flight Ticket</a>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights & Food -->
+        <section id="highlights" class="scroll-mt-24 pb-12">
+            <div class="flex items-center gap-3 mb-8">
+                <h2 class="text-3xl font-serif font-bold text-slate-800">Must-Do's & Eats</h2>
+                <div class="h-px bg-slate-200 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Highlight 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <img src="https://placehold.co/600x300/0f766e/ffffff?text=Hon+Thom+Cable+Car" alt="Cable Car" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2 text-tropical-600 text-sm font-bold uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            Phu Quoc Activity
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Hon Thom Cable Car</h3>
+                        <p class="text-slate-600 text-sm">The longest non-stop three-rope cable car in the world. 15 minutes of gliding over turquoise waters and fishing villages down in the south of the island.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <img src="https://placehold.co/600x300/0891b2/ffffff?text=B%C3%BAn+Qu%E1%BA%ADy" alt="Bun Quay Food" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2 text-amber-600 text-sm font-bold uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                            Phu Quoc Local Eats
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Bún Quậy (Stirred Noodles)</h3>
+                        <p class="text-slate-600 text-sm">The island's signature dish. Fresh rice noodle soup with shrimp and squid. The trick is making your own dipping sauce with kumquat and chili, and stirring it into the broth.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <img src="https://placehold.co/600x300/f59e0b/ffffff?text=Night+Market+Seafood" alt="Night Market" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2 text-amber-600 text-sm font-bold uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path></svg>
+                            Dinner Vibes
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Duong Dong Night Market</h3>
+                        <p class="text-slate-600 text-sm">The best place for fresh seafood. Pick sea urchins, scallops, and squid right from the tanks and they'll grill it for you on the spot with scallion oil and peanuts.</p>
+                    </div>
+                </div>
+
+                <!-- Highlight 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
+                    <img src="https://placehold.co/600x300/e11d48/ffffff?text=Sunset+Town" alt="Sunset Town" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-2 text-tropical-600 text-sm font-bold uppercase tracking-wider">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg>
+                            Sightseeing
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Sunset Town</h3>
+                        <p class="text-slate-600 text-sm">Located near the cable car station, it looks like a Mediterranean city dropped into Vietnam. Home to the "Kiss Bridge" and great evening entertainment shows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-tropical-900 text-tropical-100 py-8 text-center border-t border-tropical-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <p class="mb-2">Designed for the 2026-2027 Vietnam Trip</p>
+            <p class="text-sm text-tropical-400">See you at the airport!</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Simple accordion logic for the itinerary
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const isExpanded = content.classList.contains('expanded');
+            
+            // Close all first (optional: if you only want one open at a time)
+            document.querySelectorAll('.accordion-content').forEach(el => {
+                el.classList.remove('expanded');
+            });
+
+            // Toggle the clicked one
+            if (!isExpanded) {
+                content.classList.add('expanded');
+            }
+        }
+
+        // Expand the first item by default on load
+        window.onload = function() {
+            toggleAccordion('day1');
+        }
+    </script>
+</body>
+</html>
